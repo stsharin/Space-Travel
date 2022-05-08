@@ -1,0 +1,1 @@
+export const MAIN_SEARCH = 'SEARCH_MAIN';
