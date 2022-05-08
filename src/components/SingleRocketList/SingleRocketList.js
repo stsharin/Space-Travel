@@ -3,7 +3,7 @@ import React from 'react';
 const SingleRocketList = (props) => {
     const rockets = props.rocket;
 
-    const { launch_date_local, launch_success } = rockets;
+    const { launch_date_local } = rockets;
     const { rocket_name } = rockets.rocket;
     const { mission_patch_small } = rockets.links;
     // const { launch_success } = rockets;

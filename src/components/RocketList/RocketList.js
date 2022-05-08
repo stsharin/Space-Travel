@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { rocketListApi } from '../../api/RocketListApi';
 import SingleRocketList from '../SingleRocketList/SingleRocketList';
+import { useSelector } from 'react-redux';
 
 
 const RocketList = () => {
 
     const [rocketList, setRocketList] = useState([]);
 
-    // fetching rocket details
+    const {list} = useSelector((state) => state.searchReducer);
+    console.log(list)
+
+    // fetching all rocket details
     useEffect(() => {
         fetch(rocketListApi)
             .then(res => res.json())
@@ -18,7 +22,7 @@ const RocketList = () => {
         <div className="container">
             <div className="row row-cols-4 mt-5">
                 {
-                    rocketList.map(rc => <SingleRocketList rocket={rc} />)
+                    rocketList.map((rc, ind) => <SingleRocketList key={ind} rocket={rc} />)
                 }
             </div>
         </div>

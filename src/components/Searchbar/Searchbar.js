@@ -10,12 +10,11 @@ const Searchbar = () => {
     const handleSearch = () =>{
         console.log("clicked search value")
         dispatch(fetchProducts(searchValue));
-    
     }
 
     const handleInput = (event) => {
         const value = (event.target.value);
-        console.log(value);
+        setSearchValue(value);
     }
 
     return (
