@@ -5,7 +5,7 @@ export const mainSearch = (data) => ({
 	payload: data,
 });
 
-export const fetchProducts = (searchKey) => {
+export const fetchRockets = (searchKey) => {
 	return async (dispatch) => {
 		
 		try{

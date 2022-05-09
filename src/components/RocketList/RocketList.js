@@ -22,7 +22,7 @@ const RocketList = () => {
         <div className="container">
             <div className="row row-cols-4 mt-5">
                 {
-                    rocketList.map((rc, ind) => <SingleRocketList key={ind} rocket={rc} />)
+                    rocketList.map((rc, index) => <SingleRocketList key={index} rocket={rc} />)
                 }
             </div>
         </div>

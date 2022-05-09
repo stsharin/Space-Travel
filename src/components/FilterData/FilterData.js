@@ -2,16 +2,38 @@ import React from 'react';
 
 const FilterData = () => {
     return (
-        <div className="dropdown">
-            <a className="btn border dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                Filter Data
-            </a>
+        <div className="dropdown float-end mt-2">
 
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a className="dropdown-item" href="#">Launch Date
-                </a></li>
-                <li><a className="dropdown-item" href="#">Launch Status</a></li>
-                <li><a className="dropdown-item" href="#">Up comings</a></li>
+            <button className="btn border dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <span className='text-white'>Filter Rocket Details</span>
+            </button>
+
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                    <button className="dropdown-item bg-dark text-white" href="..">Launch Date</button>
+                    <ul>
+                        <li><a className="dropdown-item" href="..">Last Week</a></li>
+                        <li><a className="dropdown-item" href="..">Last Month</a></li>
+                        <li><a className="dropdown-item" href="..">Last Year</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                <button className="dropdown-item bg-dark text-white" href="..">Launch Status</button>
+                    <ul>
+                        <li><a className="dropdown-item" href="..">Success</a></li>
+                        <li><a className="dropdown-item" href="..">Failure</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                <button className="dropdown-item bg-dark text-white" href="..">Upcoming</button>
+                    <ul>
+                        <li><a className="dropdown-item" href="..">Yes</a></li>
+                        <li><a className="dropdown-item" href="..">No</a></li>
+                    </ul>
+                </li>
+
             </ul>
         </div>
     );
