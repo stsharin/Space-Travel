@@ -1,40 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { filterUpComings } from '../../redux/actions/FilterAction';
 
 const FilterData = () => {
+
+    // const [filterValue, setFilterValue] = useState("")
+    const dispatch = useDispatch();
+
+    const handleFilter = (e) => {
+        let value = e.target.value;
+        console.log(value)
+        dispatch(filterUpComings(value));
+    }
+
     return (
-        <div className="dropdown float-end mt-2">
+        <div className="short-by">
+            <div className="form-group pt-2">
+                <select onChange={handleFilter} defaultValue={'DEFAULT'} name="sort_by" className="form-control">
+                    <option value="DEFAULT" disabled>Filter data</option>
 
-            <button className="btn border dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <span className='text-white'>Filter Rocket Details</span>
-            </button>
+                    <option disabled>Upcoming</option>
+                    <optgroup>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </optgroup>
 
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>
-                    <button className="dropdown-item bg-dark text-white" href="..">Launch Date</button>
-                    <ul>
-                        <li><a className="dropdown-item" href="..">Last Week</a></li>
-                        <li><a className="dropdown-item" href="..">Last Month</a></li>
-                        <li><a className="dropdown-item" href="..">Last Year</a></li>
-                    </ul>
-                </li>
+                    <option disabled>Launch Status</option>
+                    <optgroup>
+                        <option value="launch_success=true">Success</option>
+                        <option value="launch_success=false">Failure</option>
+                    </optgroup>
 
-                <li>
-                <button className="dropdown-item bg-dark text-white" href="..">Launch Status</button>
-                    <ul>
-                        <li><a className="dropdown-item" href="..">Success</a></li>
-                        <li><a className="dropdown-item" href="..">Failure</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                <button className="dropdown-item bg-dark text-white" href="..">Upcoming</button>
-                    <ul>
-                        <li><a className="dropdown-item" href="..">Yes</a></li>
-                        <li><a className="dropdown-item" href="..">No</a></li>
-                    </ul>
-                </li>
-
-            </ul>
+                </select>
+            </div>
         </div>
     );
 };

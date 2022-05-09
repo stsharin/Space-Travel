@@ -8,7 +8,7 @@ const Home = () => {
         <div>
             <div className="row bg-dark">
                 <div className="col-8"><Searchbar /></div>
-                <div className="col-4"><FilterData /></div>
+                <div className="col-3"><FilterData /></div>
             </div>
             <RocketList />
         </div>

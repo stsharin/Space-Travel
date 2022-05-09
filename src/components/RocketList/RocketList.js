@@ -8,8 +8,13 @@ const RocketList = () => {
 
     const [rocketList, setRocketList] = useState([]);
 
+    // searched data
     const {list} = useSelector((state) => state.searchReducer);
     console.log(list)
+
+    // filtered data
+    // const {filterList} = useSelector((state) => state.searchReducer);
+    // console.log(filterList)
 
     // fetching all rocket details
     useEffect(() => {
