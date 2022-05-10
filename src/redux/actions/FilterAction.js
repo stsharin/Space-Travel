@@ -5,7 +5,7 @@ export const filterData = (data) => ({
 	payload: data,
 });
 
-export const filterUpComings = (upComingValue) => {
+export const filterRocketDetails = (upComingValue) => {
 	return async (dispatch) => {
 		try{
 			dispatch(filterData(upComingValue));
