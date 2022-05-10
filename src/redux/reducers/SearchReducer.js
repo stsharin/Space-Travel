@@ -1,7 +1,8 @@
 import { MAIN_SEARCH } from "../types";
 
 const INITIAL_STATE = {
-    list: []
+    // list: [],
+    searchKey: ""
 }
 
 const SearchReducer = (state = INITIAL_STATE, action) => {
@@ -10,8 +11,7 @@ const SearchReducer = (state = INITIAL_STATE, action) => {
         case MAIN_SEARCH:
             return {
                 ...state,
-				list: action.payload,
-                
+				searchKey: action.payload,
             };
 
         default:

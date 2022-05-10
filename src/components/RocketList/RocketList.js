@@ -8,13 +8,11 @@ const RocketList = () => {
 
     const [rocketList, setRocketList] = useState([]);
 
-    // searched data
-    const {list} = useSelector((state) => state.searchReducer);
-    console.log(list)
-
-    // filtered data
-    // const {filterList} = useSelector((state) => state.searchReducer);
-    // console.log(filterList)
+    // searched data from store
+    const { searchKey } = useSelector((state) => state.searchReducer);
+    // filtered data from store
+    const { filterValue } = useSelector((state) => state.filterReducer);
+    console.log("filter", filterValue)
 
     // fetching all rocket details
     useEffect(() => {
@@ -22,6 +20,20 @@ const RocketList = () => {
             .then(res => res.json())
             .then(data => setRocketList(data))
     }, []);
+
+    // fetching searched data
+    useEffect(() => {
+        fetch(`https://api.spacexdata.com/v3/launches/?rocket_name=${searchKey}`)
+            .then(res => res.json())
+            .then(data => setRocketList(data))
+    }, [searchKey]);
+
+    //  filtering data
+    useEffect(() => {
+        fetch(`https://api.spacexdata.com/v3/launches/?${filterValue}`)
+            .then(res => res.json())
+            .then(data => setRocketList(data))
+    }, [filterValue]);
 
     return (
         <div className="container">

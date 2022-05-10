@@ -7,6 +7,7 @@ const FilterData = () => {
     // const [filterValue, setFilterValue] = useState("")
     const dispatch = useDispatch();
 
+    // handling filter value
     const handleFilter = (e) => {
         let value = e.target.value;
         console.log(value)
@@ -18,12 +19,6 @@ const FilterData = () => {
             <div className="form-group pt-2">
                 <select onChange={handleFilter} defaultValue={'DEFAULT'} name="sort_by" className="form-control">
                     <option value="DEFAULT" disabled>Filter data</option>
-
-                    <option disabled>Upcoming</option>
-                    <optgroup>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </optgroup>
 
                     <option disabled>Launch Status</option>
                     <optgroup>

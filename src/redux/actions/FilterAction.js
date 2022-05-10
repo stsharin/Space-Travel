@@ -7,11 +7,8 @@ export const filterData = (data) => ({
 
 export const filterUpComings = (upComingValue) => {
 	return async (dispatch) => {
-		console.log("upcoming value", upComingValue);
 		try{
-			const res = await fetch(`https://api.spacexdata.com/v3/launches/?${upComingValue}`)
-			// dispatch(filterData(await res.json()));
-			console.log(await res.json());
+			dispatch(filterData(upComingValue));
 		}
 		catch(e) {
 			console.log(e);

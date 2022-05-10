@@ -1,7 +1,7 @@
 import { FILTER_DETAILS } from "../types";
 
 const INITIAL_STATE = {
-    list: []
+    filterValue: []
 }
 
 const FilterReducer = (state = INITIAL_STATE, action) => {
@@ -10,7 +10,7 @@ const FilterReducer = (state = INITIAL_STATE, action) => {
         case FILTER_DETAILS:
             return {
                 ...state,
-				list: action.payload,
+				filterValue: action.payload,
             };
 
         default:
